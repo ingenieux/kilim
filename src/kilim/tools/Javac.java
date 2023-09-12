@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -102,7 +103,7 @@ public class Javac {
         } else {
             tmpDirName += File.separator;
         }
-        Random r = new Random();
+        Random r = new SecureRandom();
         String name = tmpDirName + "kilim$" + r.nextLong();
         File rootDir = new File(name);
         if (!rootDir.mkdir()) {
