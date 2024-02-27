@@ -33,7 +33,7 @@ public class WeavingClassLoader extends KilimClassLoader {
         fileContainers = new ArrayList<FileLister>(classPaths.length);
         for (String name : classPaths) {
             name = name.trim();
-            if (name.equals(""))
+            if ("".equals(name))
                 continue;
             try {
                 fileContainers.add(new FileLister(name));

@@ -33,9 +33,9 @@ public class Ping {
     public static void main(String args[]) throws Exception {
         if (args.length == 0) {
             usage();
-        } else if (args[0].equalsIgnoreCase("-server")) {
+        } else if ("-server".equalsIgnoreCase(args[0])) {
             server = true;
-        } else if (args[0].equalsIgnoreCase("-client")) {
+        } else if ("-client".equalsIgnoreCase(args[0])) {
             server = false;
         } else {
             usage();

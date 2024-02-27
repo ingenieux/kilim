@@ -42,7 +42,7 @@ public class SimpleTask extends Task {
     public void execute() throws Pausable{
         while (true) {
             String s = mb.get();
-            if (s.equals("done")) break;
+            if ("done".equals(s)) break;
             System.out.print(s);
         }
         

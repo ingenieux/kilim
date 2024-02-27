@@ -19,11 +19,11 @@ public class ThreadBench extends Thread {
         try {
             for (int i = 0; i < args.length; i++) {
                 String arg = args[i];
-                if (arg.equals("-k")) {
+                if ("-k".equals(arg)) {
                     k = Integer.parseInt(args[++i]);
-                } else if (arg.equals("-n")) {
+                } else if ("-n".equals(arg)) {
                     n = Integer.parseInt(args[++i]);
-                } else if (arg.equals("-t")) {
+                } else if ("-t".equals(arg)) {
                     tracing = true;
                 }
             }

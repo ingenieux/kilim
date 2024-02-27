@@ -22,11 +22,11 @@ public class Ring extends Task {
         try {
             for (int i = 0; i < args.length; i++) {
                 String arg = args[i];
-                if (arg.equals("-n")) {
+                if ("-n".equals(arg)) {
                     n = Integer.parseInt(args[++i]);
-                } else if (arg.equals("-t")) {
+                } else if ("-t".equals(arg)) {
                     t = Integer.parseInt(args[++i]);
-                } else if (arg.equals("-l")) {
+                } else if ("-l".equals(arg)) {
                     logging = true;
                 }
             }

@@ -214,13 +214,13 @@ public class Weaver {
         String regex = null;
         for (int i = 0; i < args.length; i++) {
             String arg = args[i];
-            if (arg.equals("-d")) {
+            if ("-d".equals(arg)) {
                 outputDir = args[++i];
-            } else if (arg.equals("-q")) {
+            } else if ("-q".equals(arg)) {
                 verbose = false;
-            } else if (arg.equals("-h")) {
+            } else if ("-h".equals(arg)) {
                 help();
-            } else if (arg.equals("-x")) {
+            } else if ("-x".equals(arg)) {
                 regex = args[++i];
                 excludePattern = Pattern.compile(regex);
             } else {
