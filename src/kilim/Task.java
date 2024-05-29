@@ -140,7 +140,7 @@ public abstract class Task implements EventSubscriber {
         int len = stes.length;
         for (int i = 0; i < len; i++) {
             StackTraceElement ste = stes[i];
-            if (ste.getMethodName().equals("_runExecute")){
+            if ("_runExecute".equals(ste.getMethodName())){
                 // discounting WorkerThread.run, Task._runExecute, and Scheduler.getStackDepth
                 return i - 1;
             }
@@ -297,7 +297,7 @@ public abstract class Task implements EventSubscriber {
     // Given a method corresp. to "f(int)", return the equivalent woven method for "f(int, kilim.Fiber)" 
     private static Method getWovenMethod(Method m) {
       Class<?>[] ptypes = m.getParameterTypes();
-      if (!(ptypes.length > 0 && ptypes[ptypes.length-1].getName().equals("kilim.Fiber"))) {
+      if (!(ptypes.length > 0 && "kilim.Fiber".equals(ptypes[ptypes.length-1].getName()))) {
         // The last param is not "Fiber", so m is not woven.  
         // Get the woven method corresponding to m(..., Fiber)
         boolean found = false;

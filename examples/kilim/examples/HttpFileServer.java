@@ -161,7 +161,7 @@ public class HttpFileServer extends HttpSession {
         p.print(relDir);
         p.print("</title></head><body ");
         p.print("><h2>Index of ");
-        p.print(relDir.equals(".") ? "/" : relDir);
+        p.print(".".equals(relDir) ? "/" : relDir);
         p.print("</h2>");
         String names[] = file.list();
         if (names == null) {

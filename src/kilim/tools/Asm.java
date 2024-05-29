@@ -142,7 +142,7 @@ public class Asm {
     private int parseModifiers(String s) {
         if (s == null) return 0;
         s = s.trim();
-        if (s.equals("")) return 0;
+        if ("".equals(s)) return 0;
         int acc = 0;
         for (String modifier : split(wsPattern, s)) {
             if (!modifiers.containsKey(modifier)) {
@@ -309,7 +309,7 @@ public class Asm {
             maxStack = parseInt(group(1));
         } else if (lineMatch(catchPattern)) {
             String exceptionType = group(1);
-            if (exceptionType.equals("all")) {
+            if ("all".equals(exceptionType)) {
                 exceptionType = null;
             }
             Label fromLabel = getLabel(group(2));
@@ -325,7 +325,7 @@ public class Asm {
 
     private void parseAnnotation() {
         String s = group(2);
-        boolean visible = s == null ? false : s.equals("visible");
+        boolean visible = s == null ? false : "visible".equals(s);
         String desc = group(3);
         mv.visitAnnotation(desc, visible);
         readLine();
@@ -483,7 +483,7 @@ public class Asm {
                     if (lineMatch(casePattern)) {
                         Label lab = getLabel(group(2));
                         String keystr = group(1);
-                        if (keystr.equals("default")) {
+                        if ("default".equals(keystr)) {
                             defLabel = lab;
                             break;
                         } else {
@@ -784,9 +784,9 @@ public class Asm {
         ArrayList<String> ret = new ArrayList<String>(args.length);
         for (int i = 0; i < args.length; i++) {
             String arg = args[i];
-            if (arg.equals("-d")) {
+            if ("-d".equals(arg)) {
                 outputDir = args[++i];
-            } else if (arg.equals("-q")) {
+            } else if ("-q".equals(arg)) {
                 quiet = true;
             } else {
                 ret.add(arg);

@@ -139,7 +139,7 @@ public class Frame {
     }
     
     private boolean checkType(String desc) {
-        if (desc.equals("Ljava/lang/Object;") && desc != D_OBJECT) return false;
+        if ("Ljava/lang/Object;".equals(desc) && desc != D_OBJECT) return false;
         switch(desc.charAt(0)) {
             case 'L': case 'B': case 'C': case 'D': case 'F': case 'I':
             case 'J': case 'S': case 'Z': case 'N': case '[': case 'A': 

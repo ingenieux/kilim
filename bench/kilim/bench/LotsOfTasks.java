@@ -22,11 +22,11 @@ public class LotsOfTasks {
         try {
             for (int i = 0; i < args.length; i++) {
                 String arg = args[i];
-                if (arg.equalsIgnoreCase("-nRounds")) {
+                if ("-nRounds".equalsIgnoreCase(arg)) {
                     nRounds = Integer.parseInt(args[++i]);
-                } else if (arg.equalsIgnoreCase("-nTasks")) {
+                } else if ("-nTasks".equalsIgnoreCase(arg)) {
                     nTasks = Integer.parseInt(args[++i]);
-                } else if (arg.equalsIgnoreCase("-block")) {
+                } else if ("-block".equalsIgnoreCase(arg)) {
                     block = true;
                 }
             }

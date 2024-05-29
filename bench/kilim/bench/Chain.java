@@ -24,9 +24,9 @@ public class Chain extends Task {
         try {
             for (int i = 0; i < args.length; i++) {
                 String arg = args[i];
-                if (arg.equalsIgnoreCase("-nMsgs")) {
+                if ("-nMsgs".equalsIgnoreCase(arg)) {
                     nMsgs = Integer.parseInt(args[++i]);
-                } else if (arg.equalsIgnoreCase("-nTasks")) {
+                } else if ("-nTasks".equalsIgnoreCase(arg)) {
                     nTasks = Integer.parseInt(args[++i]);
                 }
             }
