@@ -1,5 +1,6 @@
 package kilim.test;
 
+import java.security.SecureRandom;
 import junit.framework.TestCase;
 
 import java.util.Random;
@@ -39,7 +40,7 @@ public class TestRing extends TestCase {
     }
 
     private Integer[] mkRandom() {
-        Random r = new Random();
+        Random r = new SecureRandom();
         Integer[] ret = new Integer[1000];
         for (int i = 0; i < 1000; i++) {
             ret[i] = new Integer(r.nextInt(1000));
